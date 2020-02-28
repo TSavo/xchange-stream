@@ -1,10 +1,12 @@
 package info.bitrich.xchangestream.lgo.domain;
 
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.dto.Order;
 
-import java.util.*;
+import java.util.Date;
+import java.util.Map;
 
 /**
  * Order was invalid

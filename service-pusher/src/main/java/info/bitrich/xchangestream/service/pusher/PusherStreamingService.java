@@ -1,9 +1,10 @@
 package info.bitrich.xchangestream.service.pusher;
 
-import com.pusher.client.Authorizer;
 import com.pusher.client.Pusher;
 import com.pusher.client.PusherOptions;
-import com.pusher.client.channel.*;
+import com.pusher.client.channel.Channel;
+import com.pusher.client.channel.PrivateChannelEventListener;
+import com.pusher.client.channel.PusherEvent;
 import com.pusher.client.connection.ConnectionEventListener;
 import com.pusher.client.connection.ConnectionState;
 import com.pusher.client.connection.ConnectionStateChange;

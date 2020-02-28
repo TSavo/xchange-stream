@@ -1,9 +1,10 @@
 package info.bitrich.xchangestream.cexio;
 
 import info.bitrich.xchangestream.core.StreamingExchangeFactory;
-import java.io.IOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.IOException;
 
 public class CexioManualExample {
 

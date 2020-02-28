@@ -68,12 +68,12 @@ public class BitmexWebSocketTransaction {
     }
 
     public BitmexOrder[] toBitmexOrders() {
-        BitmexOrder[] orders = new BitmexOrder[this.data.size()];
-        for(int i = 0; i < this.data.size(); ++i) {
-            JsonNode jsonOrder = this.data.get(i);
+        BitmexOrder[] orders = new BitmexOrder[data.size()];
+        for(int i = 0; i < data.size(); ++i) {
+            JsonNode jsonOrder = data.get(i);
 
             try {
-                orders[i] = (BitmexOrder) this.mapper.readValue(jsonOrder.toString(), BitmexOrder.class);
+                orders[i] = mapper.readValue(jsonOrder.toString(), BitmexOrder.class);
             } catch (IOException var5) {
                 var5.printStackTrace();
             }
@@ -85,7 +85,7 @@ public class BitmexWebSocketTransaction {
     public BitmexFunding toBitmexFunding() {
         BitmexFunding funding = null;
         try {
-            funding = this.mapper.readValue(this.data.get(0).toString(), BitmexFunding.class);
+            funding = mapper.readValue(data.get(0).toString(), BitmexFunding.class);
         } catch (IOException var5) {
             var5.printStackTrace();
         }

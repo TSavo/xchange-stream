@@ -5,7 +5,6 @@ import info.bitrich.xchangestream.bitmex.dto.BitmexOrder;
 import io.reactivex.Observable;
 import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.dto.Order;
-import org.knowm.xchange.exceptions.NotYetImplementedForExchangeException;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;

@@ -1,7 +1,6 @@
 package info.bitrich.xchangestream.binance;
 
 import info.bitrich.xchangestream.core.ProductSubscription;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.knowm.xchange.currency.CurrencyPair;

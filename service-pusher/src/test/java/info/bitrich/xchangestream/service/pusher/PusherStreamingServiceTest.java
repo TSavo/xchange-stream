@@ -36,13 +36,13 @@ public class PusherStreamingServiceTest {
     private PusherStreamingService streamingService;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         MockitoAnnotations.initMocks(this);
         streamingService = new PusherStreamingService(pusher);
     }
 
     @Test
-    public void testConnect() throws Exception {
+    public void testConnect() {
         // Capture listener from connect method.
         ArgumentCaptor<ConnectionEventListener> listener = ArgumentCaptor.forClass(ConnectionEventListener.class);
         TestObserver<Void> test = streamingService.connect().test();
@@ -58,7 +58,7 @@ public class PusherStreamingServiceTest {
     }
 
     @Test
-    public void testSubscribeChannel() throws Exception {
+    public void testSubscribeChannel() {
         when(pusher.getConnection()).thenReturn(connection);
         when(connection.getState()).thenReturn(ConnectionState.CONNECTED);
         when(pusher.subscribe(any())).thenReturn(channel);
@@ -83,7 +83,7 @@ public class PusherStreamingServiceTest {
     }
 
     @Test
-    public void testSubscribeChannelNotConnected() throws Exception {
+    public void testSubscribeChannelNotConnected() {
         when(pusher.getConnection()).thenReturn(connection);
         when(connection.getState()).thenReturn(ConnectionState.DISCONNECTED);
 

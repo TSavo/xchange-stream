@@ -1,8 +1,5 @@
 package info.bitrich.xchangestream.binance.dto;
 
-import static info.bitrich.xchangestream.binance.dto.BaseBinanceWebSocketTransaction.BinanceWebSocketTypes.TICKER_24_HR;
-import static org.assertj.core.api.Assertions.assertThat;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.BeforeClass;
@@ -13,6 +10,9 @@ import org.knowm.xchange.currency.CurrencyPair;
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
+
+import static info.bitrich.xchangestream.binance.dto.BaseBinanceWebSocketTransaction.BinanceWebSocketTypes.TICKER_24_HR;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class TickerBinanceWebsocketTransactionTest {
 

@@ -28,11 +28,6 @@ public class CoinbaseProStreamingExchange extends CoinbaseProExchange implements
     public CoinbaseProStreamingExchange() { }
 
     @Override
-    protected void initServices() {
-        super.initServices();
-    }
-
-    @Override
     public Completable connect(ProductSubscription... args) {
         if (args == null || args.length == 0)
             throw new UnsupportedOperationException("The ProductSubscription must be defined!");

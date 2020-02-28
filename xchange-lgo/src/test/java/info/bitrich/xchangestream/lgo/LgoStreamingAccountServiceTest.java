@@ -5,13 +5,14 @@ import io.reactivex.Observable;
 import io.reactivex.observers.TestObserver;
 import org.junit.Test;
 import org.knowm.xchange.currency.Currency;
-import org.knowm.xchange.dto.account.*;
+import org.knowm.xchange.dto.account.Balance;
+import org.knowm.xchange.dto.account.Wallet;
 
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Arrays;
 
-import static org.mockito.ArgumentMatchers.*;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
 public class LgoStreamingAccountServiceTest {

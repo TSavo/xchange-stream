@@ -4,12 +4,8 @@ import info.bitrich.xchangestream.binance.BinanceUserDataChannel.NoActiveChannel
 import info.bitrich.xchangestream.core.ProductSubscription;
 import info.bitrich.xchangestream.core.StreamingExchange;
 import info.bitrich.xchangestream.util.Events;
-
 import io.reactivex.Completable;
 import io.reactivex.Observable;
-
-import si.mazi.rescu.RestProxyFactory;
-
 import org.knowm.xchange.binance.BinanceAuthenticated;
 import org.knowm.xchange.binance.BinanceExchange;
 import org.knowm.xchange.binance.service.BinanceMarketDataService;
@@ -17,6 +13,7 @@ import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.service.BaseExchangeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import si.mazi.rescu.RestProxyFactory;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -7,7 +7,8 @@ import info.bitrich.xchangestream.service.netty.StreamingObjectMapperHelper;
 import io.reactivex.Observable;
 import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.dto.marketdata.Trade;
-import org.slf4j.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
@@ -30,7 +31,7 @@ class LgoTradeBatchSubscription {
 
     private Observable<Trade> createTradeSubscription() {
         final ObjectMapper mapper = StreamingObjectMapperHelper.getObjectMapper();
-        Observable<Trade> observable = service
+        return service
                 .subscribeChannel(LgoAdapter.channelName("trades", currencyPair))
                 .map(s -> mapper.readValue(s.toString(), LgoTradesUpdate.class))
                 .scan(new LgoGroupedTradeUpdate(currencyPair), (acc, s) -> {
@@ -47,7 +48,6 @@ class LgoTradeBatchSubscription {
                 })
                 .skip(1)
                 .flatMap(acc -> Observable.fromIterable(acc.getTrades()));
-        return observable;
     }
 
     private void resubscribe() {

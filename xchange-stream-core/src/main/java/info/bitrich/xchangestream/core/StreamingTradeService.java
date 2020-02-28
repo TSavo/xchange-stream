@@ -1,13 +1,12 @@
 package info.bitrich.xchangestream.core;
 
+import io.reactivex.Observable;
 import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.dto.Order;
 import org.knowm.xchange.dto.trade.UserTrade;
 import org.knowm.xchange.exceptions.ExchangeSecurityException;
 import org.knowm.xchange.exceptions.NotYetImplementedForExchangeException;
 import org.knowm.xchange.service.trade.TradeService;
-
-import io.reactivex.Observable;
 
 public interface StreamingTradeService {
 

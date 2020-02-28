@@ -13,7 +13,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.SortedMap;
 
 import static org.knowm.xchange.poloniex.PoloniexAdapters.adaptPoloniexDepth;
 import static org.knowm.xchange.poloniex.PoloniexAdapters.adaptPoloniexTicker;
@@ -82,6 +85,7 @@ public class PoloniexStreamingMarketDataService implements StreamingMarketDataSe
                 .map(s -> PoloniexWebSocketAdapter.convertPoloniexWebSocketTradeEventToTrade(s, currencyPair));
     }
 
+    @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
     private Optional<PoloniexOrderbook> getPoloniexOrderbook(final Optional<PoloniexOrderbook> orderbook,
                                                              final PoloniexWebSocketEvent s) {
         if (s.getEventType().equals("i")) {

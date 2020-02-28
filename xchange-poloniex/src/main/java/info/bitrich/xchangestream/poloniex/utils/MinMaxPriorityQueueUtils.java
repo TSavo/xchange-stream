@@ -10,8 +10,7 @@ import java.util.List;
 public class MinMaxPriorityQueueUtils {
     public static <T> List toList(MinMaxPriorityQueue<T> queue, Comparator<? super T> comparator) {
         List<T> list = new ArrayList<T>(queue.size());
-        for (T e : queue)
-            list.add(e);
+        list.addAll(queue);
         if (comparator != null) {
             list.sort(comparator);
         }

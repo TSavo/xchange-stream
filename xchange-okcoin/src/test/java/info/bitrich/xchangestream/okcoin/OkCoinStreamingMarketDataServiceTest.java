@@ -28,7 +28,7 @@ public class OkCoinStreamingMarketDataServiceTest {
     private OkCoinStreamingMarketDataService marketDataService;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         MockitoAnnotations.initMocks(this);
         marketDataService = new OkCoinStreamingMarketDataService(okCoinStreamingService);
     }

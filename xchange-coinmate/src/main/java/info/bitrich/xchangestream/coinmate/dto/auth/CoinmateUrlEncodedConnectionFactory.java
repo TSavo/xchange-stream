@@ -2,8 +2,6 @@ package info.bitrich.xchangestream.coinmate.dto.auth;
 
 import com.pusher.client.util.ConnectionFactory;
 import org.knowm.xchange.coinmate.CoinmateException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.URLEncoder;

@@ -22,14 +22,6 @@ public enum StreamingExchangeFactory {
 
     // flags
     private final Logger LOG = LoggerFactory.getLogger(ExchangeFactory.class);
-
-    /**
-     * Constructor
-     */
-    private StreamingExchangeFactory() {
-
-    }
-
     /**
      * Create an Exchange object without default ExchangeSpecification
      * <p>
@@ -55,8 +47,7 @@ public enum StreamingExchangeFactory {
             // Test that the class implements Exchange
             if (Exchange.class.isAssignableFrom(exchangeProviderClass)) {
                 // Instantiate through the default constructor and use the default exchange specification
-                StreamingExchange exchange = (StreamingExchange) exchangeProviderClass.getConstructor().newInstance();
-                return exchange;
+                return (StreamingExchange) exchangeProviderClass.getConstructor().newInstance();
             } else {
                 throw new ExchangeException("Class '" + exchangeClassName + "' does not implement Exchange");
             }

@@ -4,14 +4,15 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import info.bitrich.xchangestream.cexio.dto.CexioWebSocketTransaction;
 import io.reactivex.observers.TestObserver;
-import java.io.IOException;
-import java.math.BigDecimal;
-import java.time.Instant;
-import java.util.Date;
 import org.junit.Before;
 import org.junit.Test;
 import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.dto.Order;
+
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.time.Instant;
+import java.util.Date;
 
 public class CexioStreamingServiceTest {
 
@@ -112,7 +113,7 @@ public class CexioStreamingServiceTest {
   }
 
   @Test
-  public void testGetOrderExecution_invalidJson() throws Exception {
+  public void testGetOrderExecution_invalidJson() {
     CexioStreamingRawService service = cexioStreamingExchange.getStreamingRawService();
 
     TestObserver<Order> test = service.getOrderData().test();

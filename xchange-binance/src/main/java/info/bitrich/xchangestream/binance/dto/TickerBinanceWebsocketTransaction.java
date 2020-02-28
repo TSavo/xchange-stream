@@ -1,10 +1,9 @@
 package info.bitrich.xchangestream.binance.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.knowm.xchange.binance.dto.marketdata.BinanceTicker24h;
 
 import java.math.BigDecimal;
-
-import org.knowm.xchange.binance.dto.marketdata.BinanceTicker24h;
 
 public class TickerBinanceWebsocketTransaction extends ProductBinanceWebSocketTransaction {
 

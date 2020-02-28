@@ -7,7 +7,6 @@ import org.knowm.xchange.ExchangeFactory;
 import org.knowm.xchange.ExchangeSpecification;
 import org.knowm.xchange.bitmex.dto.marketdata.BitmexPrivateOrder;
 import org.knowm.xchange.bitmex.dto.trade.BitmexReplaceOrderParameters;
-import org.knowm.xchange.bitmex.dto.trade.BitmexSide;
 import org.knowm.xchange.bitmex.service.BitmexMarketDataService;
 import org.knowm.xchange.bitmex.service.BitmexTradeService;
 import org.knowm.xchange.currency.CurrencyPair;

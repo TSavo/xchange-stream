@@ -1,11 +1,10 @@
 package info.bitrich.xchangestream.core;
 
+import io.reactivex.Observable;
 import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.dto.marketdata.OrderBook;
 import org.knowm.xchange.dto.marketdata.Ticker;
 import org.knowm.xchange.dto.marketdata.Trade;
-
-import io.reactivex.Observable;
 
 
 public interface StreamingMarketDataService {

@@ -3,7 +3,6 @@ package info.bitrich.xchangestream.kraken.dto;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import info.bitrich.xchangestream.kraken.dto.enums.KrakenEventType;
-import org.knowm.xchange.kraken.dto.account.KrakenWebsocketToken;
 
 import java.util.List;
 

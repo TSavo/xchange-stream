@@ -27,7 +27,6 @@ public class BitmexStreamingMarketDataService implements StreamingMarketDataServ
 
     private final BitmexStreamingService streamingService;
 
-    private final BitmexExchange bitmexExchange;
 
     private final SortedMap<String, BitmexOrderbook> orderbooks = new TreeMap<>();
 
@@ -37,7 +36,6 @@ public class BitmexStreamingMarketDataService implements StreamingMarketDataServ
             LOG.info("Bitmex connection succeeded. Clearing orderbooks.");
             orderbooks.clear();
         });
-        this.bitmexExchange = bitmexExchange;
     }
 
     private String getBitmexSymbol(CurrencyPair currencyPair) {
@@ -126,7 +124,7 @@ public class BitmexStreamingMarketDataService implements StreamingMarketDataServ
         streamingService.enableDeadMansSwitch(rate, timeout);
     }
 
-    public boolean isDeadManSwitchEnabled() throws IOException {
+    public boolean isDeadManSwitchEnabled() {
         return streamingService.isDeadMansSwitchEnabled();
     }
 

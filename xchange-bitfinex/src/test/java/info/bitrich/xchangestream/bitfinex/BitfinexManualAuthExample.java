@@ -1,7 +1,6 @@
 package info.bitrich.xchangestream.bitfinex;
 
 import info.bitrich.xchangestream.core.StreamingExchangeFactory;
-
 import org.apache.commons.lang3.StringUtils;
 import org.knowm.xchange.ExchangeSpecification;
 import org.knowm.xchange.currency.Currency;

@@ -1,6 +1,5 @@
 package info.bitrich.xchangestream.bitflyer.dto;
 
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import info.bitrich.xchangestream.service.netty.StreamingObjectMapperHelper;

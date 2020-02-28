@@ -17,6 +17,7 @@ import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.math.BigDecimal;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -43,7 +44,7 @@ public class HitbtcStreamingMarketDataServiceTest {
     public void testOrderbookCommon() throws Exception {
 
         // Read order book in JSON
-        String orderBook = IOUtils.toString(getClass().getResource("/example/notificationSnapshotOrderBook.json"), "UTF8");
+        String orderBook = IOUtils.toString(getClass().getResource("/example/notificationSnapshotOrderBook.json"), StandardCharsets.UTF_8);
 
         when(streamingService.subscribeChannel(eq("orderbook-BTCEUR"))).thenReturn(Observable.just(objectMapper.readTree(orderBook)));
 
@@ -70,7 +71,7 @@ public class HitbtcStreamingMarketDataServiceTest {
     @Test
     public void testGetTrades() throws Exception {
         // Read trades in JSON
-        String trades = IOUtils.toString(getClass().getResource("/example/notificationSnapshotTrades.json"), "UTF8");
+        String trades = IOUtils.toString(getClass().getResource("/example/notificationSnapshotTrades.json"), StandardCharsets.UTF_8);
 
         when(streamingService.subscribeChannel(eq("trades-BTCUSD"))).thenReturn(Observable.just(objectMapper.readTree(trades)));
 
@@ -101,7 +102,7 @@ public class HitbtcStreamingMarketDataServiceTest {
     @Test
     public void testGetTicker() throws Exception {
         // Read ticker in JSON
-        String tickerString = IOUtils.toString(getClass().getResource("/example/notificationTicker.json"), "UTF8");
+        String tickerString = IOUtils.toString(getClass().getResource("/example/notificationTicker.json"), StandardCharsets.UTF_8);
 
         when(streamingService.subscribeChannel(eq("ticker-BTCUSD"))).thenReturn(Observable.just(objectMapper.readTree(tickerString)));
 

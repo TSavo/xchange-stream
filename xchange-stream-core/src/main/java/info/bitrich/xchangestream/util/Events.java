@@ -1,7 +1,6 @@
 package info.bitrich.xchangestream.util;
 
 import info.bitrich.xchangestream.service.ConnectableService;
-
 import org.knowm.xchange.ExchangeSpecification;
 
 public class Events {

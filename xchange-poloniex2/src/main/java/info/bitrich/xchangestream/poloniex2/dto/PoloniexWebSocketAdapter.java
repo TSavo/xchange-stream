@@ -16,8 +16,7 @@ public class PoloniexWebSocketAdapter {
             PoloniexWebSocketTradeEvent poloniexTradeEvent, CurrencyPair currencyPair) {
         TradeEvent tradeEvent = poloniexTradeEvent.getTradeEvent();
         Date timestamp = new Date(tradeEvent.getTimestampSeconds() * 1000L);
-        Trade trade =
-                new Trade.Builder()
+        return new Trade.Builder()
                         .type(tradeEvent.getType())
                         .price(tradeEvent.getPrice())
                         .originalAmount(tradeEvent.getSize())
@@ -25,6 +24,5 @@ public class PoloniexWebSocketAdapter {
                         .id(tradeEvent.getTradeId())
                         .timestamp(timestamp)
                         .build();
-        return trade;
     }
 }

@@ -1,9 +1,10 @@
 package info.bitrich.xchangestream.cexio;
 
-import java.math.BigDecimal;
-import java.util.Date;
 import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.dto.trade.LimitOrder;
+
+import java.math.BigDecimal;
+import java.util.Date;
 
 public class CexioOrder extends LimitOrder {
 

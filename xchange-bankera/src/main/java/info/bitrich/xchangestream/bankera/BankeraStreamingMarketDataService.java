@@ -4,7 +4,9 @@ import info.bitrich.xchangestream.core.StreamingMarketDataService;
 import io.reactivex.Observable;
 import org.knowm.xchange.bankera.BankeraAdapters;
 import org.knowm.xchange.bankera.dto.BankeraException;
-import org.knowm.xchange.bankera.dto.marketdata.*;
+import org.knowm.xchange.bankera.dto.marketdata.BankeraMarket;
+import org.knowm.xchange.bankera.dto.marketdata.BankeraMarketInfo;
+import org.knowm.xchange.bankera.dto.marketdata.BankeraOrderBook;
 import org.knowm.xchange.bankera.service.BankeraMarketDataService;
 import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.dto.Order;
@@ -15,7 +17,10 @@ import org.knowm.xchange.exceptions.NotAvailableFromExchangeException;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Optional;
 
 
 public class BankeraStreamingMarketDataService implements StreamingMarketDataService {

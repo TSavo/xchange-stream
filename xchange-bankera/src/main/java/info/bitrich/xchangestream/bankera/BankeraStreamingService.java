@@ -14,7 +14,7 @@ public class BankeraStreamingService extends JsonNettyStreamingService {
 	}
 
 	@Override
-	protected String getChannelNameFromMessage(JsonNode message) throws IOException {
+	protected String getChannelNameFromMessage(JsonNode message) {
     return message.get("type").asText();
 	}
 
@@ -27,7 +27,7 @@ public class BankeraStreamingService extends JsonNettyStreamingService {
 	}
 
 	@Override
-	public String getUnsubscribeMessage(String channelName) throws IOException {
+	public String getUnsubscribeMessage(String channelName) {
 		return null;
 	}
 

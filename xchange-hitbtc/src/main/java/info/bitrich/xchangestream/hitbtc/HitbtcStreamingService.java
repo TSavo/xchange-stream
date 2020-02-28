@@ -1,9 +1,7 @@
 package info.bitrich.xchangestream.hitbtc;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import info.bitrich.xchangestream.hitbtc.dto.HitbtcWebSocketBaseParams;
 import info.bitrich.xchangestream.hitbtc.dto.HitbtcWebSocketSubscriptionMessage;
 import info.bitrich.xchangestream.service.netty.JsonNettyStreamingService;

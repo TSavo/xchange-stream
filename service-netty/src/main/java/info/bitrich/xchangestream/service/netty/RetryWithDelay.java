@@ -14,10 +14,10 @@ public class RetryWithDelay implements Function<Flowable<? extends Throwable>, P
     }
 
     @Override
-    public Publisher<?> apply(Flowable<? extends Throwable> flowable) throws Exception {
+    public Publisher<?> apply(Flowable<? extends Throwable> flowable) {
         return flowable.flatMap(new Function<Throwable, Publisher<?>>() {
             @Override
-            public Publisher<?> apply(Throwable throwable) throws Exception {
+            public Publisher<?> apply(Throwable throwable) {
                 return Flowable.timer(retryDelayMillis, TimeUnit.MILLISECONDS);
             }
         });

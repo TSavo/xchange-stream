@@ -3,7 +3,8 @@ package info.bitrich.xchangestream.lgo.domain;
 import org.knowm.xchange.currency.Currency;
 import org.knowm.xchange.dto.account.Balance;
 
-import java.util.*;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class LgoGroupedBalanceUpdate {

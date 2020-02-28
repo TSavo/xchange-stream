@@ -29,7 +29,7 @@ public class BaseBinanceWebSocketTransaction {
             return null;
         }
 
-        private String serializedValue;
+        private final String serializedValue;
 
         BinanceWebSocketTypes(String serializedValue) {
             this.serializedValue = serializedValue;

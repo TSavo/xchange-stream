@@ -1,16 +1,7 @@
 package info.bitrich.xchangestream.coinbasepro.dto;
 
-import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
-import java.util.Map.Entry;
-import java.util.SortedMap;
-import java.util.TimeZone;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
+import com.fasterxml.jackson.annotation.JsonProperty;
+import info.bitrich.xchangestream.coinbasepro.CoinbaseProStreamingAdapters;
 import org.knowm.xchange.coinbasepro.dto.marketdata.CoinbaseProProductStats;
 import org.knowm.xchange.coinbasepro.dto.marketdata.CoinbaseProProductTicker;
 import org.knowm.xchange.coinbasepro.dto.marketdata.CoinbaseProTrade;
@@ -20,9 +11,12 @@ import org.knowm.xchange.dto.Order.OrderType;
 import org.knowm.xchange.dto.marketdata.OrderBook;
 import org.knowm.xchange.dto.trade.LimitOrder;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import info.bitrich.xchangestream.coinbasepro.CoinbaseProStreamingAdapters;
+import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Domain object mapping a CoinbasePro web socket message.
@@ -185,7 +179,7 @@ public class CoinbaseProWebSocketTransaction {
     }
 
     public CoinbaseProFill toCoinbaseProFill() {
-        boolean taker = userId != null && takerUserId != null && userId.equals(takerUserId);
+        boolean taker = userId != null && userId.equals(takerUserId);
         // buy/sell are flipped on the taker side.
         String useSide = side;
         if (taker && side != null) {

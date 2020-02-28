@@ -85,7 +85,7 @@ public class BitstampStreamingMarketDataServiceV2Test extends BitstampStreamingM
     }
 
     @Test(expected = NotAvailableFromExchangeException.class)
-    public void testGetTicker() throws Exception {
+    public void testGetTicker() {
         marketDataService.getTicker(CurrencyPair.BTC_EUR).test();
     }
 }

@@ -15,7 +15,7 @@ public class OkCoinStreamingServiceTest {
     private OkCoinStreamingService streamingService;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         streamingService = new OkCoinStreamingService("wss://example.com/websocket");
     }
 

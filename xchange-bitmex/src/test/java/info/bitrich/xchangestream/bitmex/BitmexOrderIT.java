@@ -1,7 +1,6 @@
 package info.bitrich.xchangestream.bitmex;
 
 import info.bitrich.xchangestream.bitmex.dto.BitmexExecution;
-import info.bitrich.xchangestream.core.StreamingExchange;
 import info.bitrich.xchangestream.core.StreamingExchangeFactory;
 import info.bitrich.xchangestream.util.LocalExchangeConfig;
 import info.bitrich.xchangestream.util.PropsLoader;
@@ -94,7 +93,7 @@ public class BitmexOrderIT {
         return System.currentTimeMillis() + "";
     }
 
-    private String placeLimitOrder(String clOrdId, BigDecimal price, String size, Order.OrderType type) throws Exception {
+    private String placeLimitOrder(String clOrdId, BigDecimal price, String size, Order.OrderType type) {
         LimitOrder limitOrder =
                 new LimitOrder(
                         type,

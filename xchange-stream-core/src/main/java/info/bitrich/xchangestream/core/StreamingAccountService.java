@@ -1,12 +1,11 @@
 package info.bitrich.xchangestream.core;
 
+import io.reactivex.Observable;
 import org.knowm.xchange.currency.Currency;
 import org.knowm.xchange.dto.account.Balance;
 import org.knowm.xchange.exceptions.ExchangeSecurityException;
 import org.knowm.xchange.exceptions.NotYetImplementedForExchangeException;
 import org.knowm.xchange.service.account.AccountService;
-
-import io.reactivex.Observable;
 
 public interface StreamingAccountService {
 

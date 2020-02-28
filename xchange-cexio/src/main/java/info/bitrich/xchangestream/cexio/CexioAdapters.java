@@ -3,15 +3,16 @@ package info.bitrich.xchangestream.cexio;
 import info.bitrich.xchangestream.cexio.dto.CexioWebSocketOrder;
 import info.bitrich.xchangestream.cexio.dto.CexioWebSocketOrderBookSubscribeResponse;
 import info.bitrich.xchangestream.cexio.dto.CexioWebSocketPair;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.util.Date;
-import java.util.List;
 import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.dto.Order;
 import org.knowm.xchange.dto.Order.OrderType;
 import org.knowm.xchange.dto.marketdata.OrderBook;
 import org.knowm.xchange.dto.trade.LimitOrder;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.Date;
+import java.util.List;
 
 public class CexioAdapters {
 

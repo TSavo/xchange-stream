@@ -7,7 +7,7 @@ import org.knowm.xchange.dto.marketdata.Trade;
 
 import java.util.List;
 
-import static java.util.stream.Collectors.*;
+import static java.util.stream.Collectors.toList;
 
 public class LgoGroupedTradeUpdate {
 

@@ -9,8 +9,8 @@ import javax.crypto.Mac;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.HashMap;
@@ -44,16 +44,16 @@ public class PusherAuthParamsObject {
         return params;
     }
 
-    private String signature(Long nonce, String userId, String apiKey, String apiSecret) throws IOException {
+    private String signature(Long nonce, String userId, String apiKey, String apiSecret) {
         try {
             Mac mac256 = Mac.getInstance("HmacSHA256");
-            SecretKey secretKey = new SecretKeySpec(apiSecret.getBytes("UTF-8"), "HmacSHA256");
+            SecretKey secretKey = new SecretKeySpec(apiSecret.getBytes(StandardCharsets.UTF_8), "HmacSHA256");
             mac256.init(secretKey);
             mac256.update(String.valueOf(nonce).getBytes());
             mac256.update(userId.getBytes());
             mac256.update(apiKey.getBytes());
             return String.format("%064x", new BigInteger(1, mac256.doFinal())).toUpperCase();
-        } catch (UnsupportedEncodingException | InvalidKeyException | NoSuchAlgorithmException ex) {
+        } catch (InvalidKeyException | NoSuchAlgorithmException ex) {
             log.error(ex.getMessage(), ex);
             throw new CoinmateException(ex.getMessage());
         }

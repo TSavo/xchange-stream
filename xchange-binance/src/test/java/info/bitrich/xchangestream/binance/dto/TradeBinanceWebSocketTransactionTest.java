@@ -3,7 +3,6 @@ package info.bitrich.xchangestream.binance.dto;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import org.junit.BeforeClass;
 import org.junit.Test;
 

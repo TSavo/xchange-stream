@@ -2,7 +2,6 @@ package info.bitrich.xchangestream.binance;
 
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
-
 import org.knowm.xchange.binance.BinanceAuthenticated;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

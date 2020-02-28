@@ -5,26 +5,32 @@ import info.bitrich.xchangestream.lgo.domain.*;
 import io.reactivex.Observable;
 import org.apache.commons.io.IOUtils;
 import org.assertj.core.util.Lists;
-import org.junit.*;
+import org.junit.Before;
+import org.junit.Test;
 import org.knowm.xchange.currency.Currency;
-import org.knowm.xchange.currency.*;
+import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.dto.Order;
-import org.knowm.xchange.dto.trade.*;
+import org.knowm.xchange.dto.trade.LimitOrder;
+import org.knowm.xchange.dto.trade.OpenOrders;
+import org.knowm.xchange.dto.trade.UserTrade;
 import org.knowm.xchange.lgo.dto.key.LgoKey;
 import org.knowm.xchange.lgo.dto.order.LgoOrderSignature;
-import org.knowm.xchange.lgo.service.*;
+import org.knowm.xchange.lgo.service.LgoKeyService;
+import org.knowm.xchange.lgo.service.LgoSignatureService;
 import org.mockito.ArgumentCaptor;
 import si.mazi.rescu.SynchronizedValueFactory;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import java.nio.charset.StandardCharsets;
-import java.text.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 
-import static org.assertj.core.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 
 public class LgoStreamingTradeServiceTest {

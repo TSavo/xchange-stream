@@ -6,7 +6,6 @@ import info.bitrich.xchangestream.poloniex2.dto.PoloniexWebSocketEventsTransacti
 import info.bitrich.xchangestream.poloniex2.dto.PoloniexWebSocketOrderbookModifiedEvent;
 import info.bitrich.xchangestream.poloniex2.dto.PoloniexWebSocketSubscriptionMessage;
 import info.bitrich.xchangestream.service.netty.JsonNettyStreamingService;
-import io.reactivex.Completable;
 import io.reactivex.Observable;
 import org.knowm.xchange.currency.CurrencyPair;
 import org.slf4j.Logger;
@@ -123,12 +122,6 @@ public class PoloniexStreamingService extends JsonNettyStreamingService {
         PoloniexWebSocketSubscriptionMessage subscribeMessage = new PoloniexWebSocketSubscriptionMessage("unsubscribe",
                 channelName);
         return objectMapper.writeValueAsString(subscribeMessage);
-    }
-
-    @Override
-    public Completable disconnect() {
-
-        return super.disconnect();
     }
 
 }

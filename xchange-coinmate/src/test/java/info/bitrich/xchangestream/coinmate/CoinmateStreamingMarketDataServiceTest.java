@@ -31,7 +31,7 @@ public class CoinmateStreamingMarketDataServiceTest {
     private CoinmateStreamingMarketDataService marketDataService;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         MockitoAnnotations.initMocks(this);
         marketDataService = new CoinmateStreamingMarketDataService(streamingService);
     }
@@ -100,7 +100,7 @@ public class CoinmateStreamingMarketDataServiceTest {
     }
 
     @Test(expected = NotAvailableFromExchangeException.class)
-    public void testGetTicker() throws Exception {
+    public void testGetTicker() {
         marketDataService.getTicker(CurrencyPair.BTC_EUR).test();
     }
 }

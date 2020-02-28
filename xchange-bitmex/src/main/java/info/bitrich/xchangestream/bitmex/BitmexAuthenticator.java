@@ -3,6 +3,7 @@ package info.bitrich.xchangestream.bitmex;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 /**
  * Created by heath on 2018/3/1.
@@ -12,7 +13,7 @@ public class BitmexAuthenticator {
     public static String getSHA256String(String str, String key) {
 
         try {
-            Charset asciiCs = Charset.forName("US-ASCII");
+            Charset asciiCs = StandardCharsets.US_ASCII;
             SecretKeySpec signingKey = new SecretKeySpec(asciiCs.encode(key).array(), "HmacSHA256");
             Mac sha256_HMAC = Mac.getInstance("HmacSHA256");
             sha256_HMAC.init(signingKey);

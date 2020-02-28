@@ -1,7 +1,8 @@
 package info.bitrich.xchangestream.coinbasepro;
 
-import static org.knowm.xchange.coinbasepro.CoinbaseProAdapters.adaptTradeHistory;
-
+import info.bitrich.xchangestream.coinbasepro.dto.CoinbaseProWebSocketTransaction;
+import info.bitrich.xchangestream.core.StreamingTradeService;
+import io.reactivex.Observable;
 import org.knowm.xchange.coinbasepro.dto.trade.CoinbaseProFill;
 import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.dto.Order;
@@ -13,9 +14,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
-import info.bitrich.xchangestream.coinbasepro.dto.CoinbaseProWebSocketTransaction;
-import info.bitrich.xchangestream.core.StreamingTradeService;
-import io.reactivex.Observable;
+import static org.knowm.xchange.coinbasepro.CoinbaseProAdapters.adaptTradeHistory;
 
 public class CoinbaseProStreamingTradeService implements StreamingTradeService {
 

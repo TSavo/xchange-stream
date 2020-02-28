@@ -1,18 +1,25 @@
 package info.bitrich.xchangestream.lgo;
 
-import info.bitrich.xchangestream.lgo.domain.*;
-import info.bitrich.xchangestream.lgo.dto.*;
+import info.bitrich.xchangestream.lgo.domain.LgoBatchOrderEvent;
+import info.bitrich.xchangestream.lgo.domain.LgoMatchOrderEvent;
+import info.bitrich.xchangestream.lgo.domain.LgoPendingOrderEvent;
+import info.bitrich.xchangestream.lgo.dto.LgoTrade;
+import info.bitrich.xchangestream.lgo.dto.LgoUserSnapshotData;
 import org.knowm.xchange.currency.Currency;
-import org.knowm.xchange.currency.*;
+import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.dto.Order;
 import org.knowm.xchange.dto.account.Balance;
 import org.knowm.xchange.dto.marketdata.Trade;
-import org.knowm.xchange.dto.trade.*;
+import org.knowm.xchange.dto.trade.LimitOrder;
+import org.knowm.xchange.dto.trade.MarketOrder;
+import org.knowm.xchange.dto.trade.UserTrade;
 
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
 
-import static java.util.stream.Collectors.*;
+import static java.util.stream.Collectors.toList;
 
 public class LgoAdapter {
 

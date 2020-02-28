@@ -1,7 +1,8 @@
 package info.bitrich.xchangestream.lgo;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import org.junit.*;
+import org.junit.Before;
+import org.junit.Test;
 import org.knowm.xchange.ExchangeSpecification;
 import org.knowm.xchange.lgo.LgoEnv;
 import org.knowm.xchange.lgo.LgoEnv.SignatureService;
@@ -9,8 +10,9 @@ import org.knowm.xchange.lgo.service.LgoSignatureService;
 
 import java.io.IOException;
 
-import static info.bitrich.xchangestream.lgo.TestUtils.*;
-import static org.assertj.core.api.Assertions.*;
+import static info.bitrich.xchangestream.lgo.TestUtils.asJsonNode;
+import static info.bitrich.xchangestream.lgo.TestUtils.getJsonContent;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class LgoStreamingServiceTest {
 

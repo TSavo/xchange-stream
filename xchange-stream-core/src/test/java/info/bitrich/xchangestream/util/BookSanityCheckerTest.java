@@ -1,12 +1,11 @@
 package info.bitrich.xchangestream.util;
 
-import info.bitrich.xchangestream.util.BookSanityChecker;
 import org.junit.Assert;
 import org.junit.Test;
 import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.dto.Order;
-import org.knowm.xchange.dto.trade.LimitOrder;
 import org.knowm.xchange.dto.marketdata.OrderBook;
+import org.knowm.xchange.dto.trade.LimitOrder;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;

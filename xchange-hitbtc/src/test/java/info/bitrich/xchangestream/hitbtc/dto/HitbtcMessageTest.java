@@ -8,7 +8,6 @@ import com.fasterxml.jackson.databind.ser.std.DateSerializer;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import org.apache.commons.io.IOUtils;
 import org.hamcrest.Matcher;
-import org.hamcrest.MatcherAssert;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -26,9 +25,9 @@ import java.util.Date;
 import java.util.TimeZone;
 
 import static com.jayway.jsonpath.matchers.JsonPathMatchers.hasJsonPath;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.core.AllOf.allOf;
-import static org.hamcrest.MatcherAssert.assertThat;
 
 /**
  * Created by Pavel Chertalev on 19.03.2018.

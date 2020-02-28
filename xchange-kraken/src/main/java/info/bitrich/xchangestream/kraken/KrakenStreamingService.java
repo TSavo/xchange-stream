@@ -115,7 +115,7 @@ public class KrakenStreamingService extends JsonNettyStreamingService {
     }
 
     @Override
-    protected String getChannelNameFromMessage(JsonNode message) throws IOException {
+    protected String getChannelNameFromMessage(JsonNode message) {
         String channelName = null;
         if (message.has("channelID")) {
             channelName = channels.get(message.get("channelID").asInt());

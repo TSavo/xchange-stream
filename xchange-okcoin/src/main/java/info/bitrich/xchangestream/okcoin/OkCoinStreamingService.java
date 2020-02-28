@@ -21,6 +21,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.concurrent.TimeUnit;
 import java.util.zip.Inflater;
 
@@ -53,7 +54,7 @@ public class OkCoinStreamingService extends JsonNettyStreamingService {
     }
 
     @Override
-    protected String getChannelNameFromMessage(JsonNode message) throws IOException {
+    protected String getChannelNameFromMessage(JsonNode message) {
         return message.get("channel").asText();
     }
 
@@ -136,7 +137,7 @@ public class OkCoinStreamingService extends JsonNettyStreamingService {
                     byte[] result = new byte[1024];
                     while (!infl.finished()) {
                         int length = infl.inflate(result);
-                        appender.append(new String(result, 0, length, "UTF-8"));
+                        appender.append(new String(result, 0, length, StandardCharsets.UTF_8));
                     }
                     infl.end();
                 } catch (Exception e) {

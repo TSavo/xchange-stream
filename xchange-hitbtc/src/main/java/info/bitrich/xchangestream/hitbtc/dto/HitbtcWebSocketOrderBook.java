@@ -41,12 +41,10 @@ public class HitbtcWebSocketOrderBook {
     }
 
     public HitbtcOrderBook toHitbtcOrderBook() {
-        HitbtcOrderLimit[] askLimits = asks.entrySet().stream()
-                .map(Map.Entry::getValue)
+        HitbtcOrderLimit[] askLimits = asks.values().stream()
                 .toArray(HitbtcOrderLimit[]::new);
 
-        HitbtcOrderLimit[] bidLimits = bids.entrySet().stream()
-                .map(Map.Entry::getValue)
+        HitbtcOrderLimit[] bidLimits = bids.values().stream()
                 .toArray(HitbtcOrderLimit[]::new);
 
         return new HitbtcOrderBook(askLimits, bidLimits);

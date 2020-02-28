@@ -1,19 +1,20 @@
 package info.bitrich.xchangestream.cexio;
 
-import static org.junit.Assert.*;
-
 import info.bitrich.xchangestream.cexio.dto.CexioWebSocketOrderBookSubscribeResponse;
+import org.junit.Test;
+import org.knowm.xchange.currency.CurrencyPair;
+import org.knowm.xchange.dto.Order.OrderType;
+import org.knowm.xchange.dto.marketdata.OrderBook;
+import org.knowm.xchange.dto.trade.LimitOrder;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-import org.junit.Test;
-import org.knowm.xchange.currency.CurrencyPair;
-import org.knowm.xchange.dto.Order.OrderType;
-import org.knowm.xchange.dto.marketdata.OrderBook;
-import org.knowm.xchange.dto.trade.LimitOrder;
+
+import static org.junit.Assert.assertEquals;
 
 public class CexioAdaptersTest {
 

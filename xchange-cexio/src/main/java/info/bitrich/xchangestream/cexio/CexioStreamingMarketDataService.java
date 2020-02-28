@@ -6,15 +6,16 @@ import info.bitrich.xchangestream.cexio.dto.CexioWebSocketOrderBookSubscribeResp
 import info.bitrich.xchangestream.core.StreamingMarketDataService;
 import info.bitrich.xchangestream.service.netty.StreamingObjectMapperHelper;
 import io.reactivex.Observable;
-import java.math.BigInteger;
-import java.util.ArrayList;
-import java.util.Date;
 import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.dto.marketdata.OrderBook;
 import org.knowm.xchange.dto.marketdata.Ticker;
 import org.knowm.xchange.dto.marketdata.Trade;
 import org.knowm.xchange.dto.trade.LimitOrder;
 import org.knowm.xchange.exceptions.NotYetImplementedForExchangeException;
+
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Date;
 
 public class CexioStreamingMarketDataService implements StreamingMarketDataService {
 
@@ -37,7 +38,7 @@ public class CexioStreamingMarketDataService implements StreamingMarketDataServi
     }
 
     @Override
-    public OrderBook apply(CexioWebSocketOrderBookSubscribeResponse t) throws Exception {
+    public OrderBook apply(CexioWebSocketOrderBookSubscribeResponse t) {
       OrderBook retVal;
       if (prevID != null && prevID.add(BigInteger.ONE).compareTo(t.id) != 0) {
         orderBookSoFar =

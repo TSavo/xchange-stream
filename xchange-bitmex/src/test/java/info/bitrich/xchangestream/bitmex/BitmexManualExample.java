@@ -1,6 +1,5 @@
 package info.bitrich.xchangestream.bitmex;
 
-import info.bitrich.xchangestream.core.StreamingExchange;
 import info.bitrich.xchangestream.core.StreamingExchangeFactory;
 import org.knowm.xchange.bitmex.BitmexPrompt;
 import org.knowm.xchange.currency.CurrencyPair;

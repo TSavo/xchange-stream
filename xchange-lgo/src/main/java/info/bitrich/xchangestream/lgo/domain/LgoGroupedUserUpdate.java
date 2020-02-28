@@ -2,7 +2,9 @@ package info.bitrich.xchangestream.lgo.domain;
 
 import org.knowm.xchange.dto.Order;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class LgoGroupedUserUpdate {

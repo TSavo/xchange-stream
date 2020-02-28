@@ -2,25 +2,21 @@ package info.bitrich.xchangestream.bitfinex;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import info.bitrich.xchangestream.bitfinex.dto.BitfinexWebSocketAuthBalance;
 import info.bitrich.xchangestream.bitfinex.dto.BitfinexWebSocketAuthOrder;
 import info.bitrich.xchangestream.bitfinex.dto.BitfinexWebSocketAuthPreTrade;
 import info.bitrich.xchangestream.bitfinex.dto.BitfinexWebSocketAuthTrade;
-
 import io.reactivex.observers.TestObserver;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import si.mazi.rescu.SynchronizedValueFactory;
 
 import java.io.IOException;
 import java.math.BigDecimal;
 
 import static org.assertj.core.api.Assertions.assertThat;
-
-import si.mazi.rescu.SynchronizedValueFactory;
 
 public class BitfinexStreamingServiceTest {
 

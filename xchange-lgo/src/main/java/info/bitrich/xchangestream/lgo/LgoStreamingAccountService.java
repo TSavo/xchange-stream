@@ -7,7 +7,8 @@ import info.bitrich.xchangestream.lgo.dto.LgoBalanceUpdate;
 import info.bitrich.xchangestream.service.netty.StreamingObjectMapperHelper;
 import io.reactivex.Observable;
 import org.knowm.xchange.currency.Currency;
-import org.knowm.xchange.dto.account.*;
+import org.knowm.xchange.dto.account.Balance;
+import org.knowm.xchange.dto.account.Wallet;
 
 import java.util.List;
 

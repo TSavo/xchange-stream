@@ -1,10 +1,11 @@
 package info.bitrich.xchangestream.cexio.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.knowm.xchange.currency.CurrencyPair;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.knowm.xchange.currency.CurrencyPair;
 
 public class CexioWebSocketOrderBookSubscriptionData {
   @JsonProperty final List<String> pair;

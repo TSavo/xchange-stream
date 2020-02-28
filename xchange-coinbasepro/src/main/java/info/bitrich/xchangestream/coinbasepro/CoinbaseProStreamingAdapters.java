@@ -1,11 +1,6 @@
 package info.bitrich.xchangestream.coinbasepro;
 
-import java.math.BigDecimal;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.TimeZone;
-
+import info.bitrich.xchangestream.coinbasepro.dto.CoinbaseProWebSocketTransaction;
 import org.knowm.xchange.coinbasepro.CoinbaseProAdapters;
 import org.knowm.xchange.coinbasepro.dto.trade.CoinbaseProOrder;
 import org.knowm.xchange.currency.CurrencyPair;
@@ -16,7 +11,11 @@ import org.knowm.xchange.dto.trade.LimitOrder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import info.bitrich.xchangestream.coinbasepro.dto.CoinbaseProWebSocketTransaction;
+import java.math.BigDecimal;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
 
 public class CoinbaseProStreamingAdapters {
 

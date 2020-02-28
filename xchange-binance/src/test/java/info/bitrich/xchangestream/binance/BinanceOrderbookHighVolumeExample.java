@@ -1,10 +1,9 @@
 package info.bitrich.xchangestream.binance;
 
-import org.knowm.xchange.ExchangeSpecification;
-import info.bitrich.xchangestream.binance.BinanceStreamingExchange;
 import info.bitrich.xchangestream.core.ProductSubscription;
 import info.bitrich.xchangestream.core.StreamingExchange;
 import info.bitrich.xchangestream.core.StreamingExchangeFactory;
+import org.knowm.xchange.ExchangeSpecification;
 
 /**
  * This is a useful test for profiling behaviour of the orderbook stream under load.

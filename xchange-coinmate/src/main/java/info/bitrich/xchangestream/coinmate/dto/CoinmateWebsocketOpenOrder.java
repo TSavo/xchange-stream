@@ -3,7 +3,6 @@ package info.bitrich.xchangestream.coinmate.dto;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.knowm.xchange.dto.Order;
 
 public class CoinmateWebsocketOpenOrder {
 

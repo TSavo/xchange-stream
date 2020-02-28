@@ -1,14 +1,11 @@
 package info.bitrich.xchangestream.bitfinex;
 
 import com.fasterxml.jackson.databind.JsonNode;
-
 import info.bitrich.xchangestream.bitfinex.dto.BitfinexWebSocketAuthBalance;
 import info.bitrich.xchangestream.bitfinex.dto.BitfinexWebSocketAuthOrder;
 import info.bitrich.xchangestream.bitfinex.dto.BitfinexWebSocketAuthPreTrade;
 import info.bitrich.xchangestream.bitfinex.dto.BitfinexWebSocketAuthTrade;
-
 import io.reactivex.annotations.Nullable;
-
 import org.knowm.xchange.bitfinex.service.BitfinexAdapters;
 import org.knowm.xchange.bitfinex.v1.BitfinexOrderType;
 import org.knowm.xchange.bitfinex.v1.dto.trade.BitfinexOrderStatusResponse;
@@ -81,11 +78,10 @@ class BitfinexStreamingAdapters {
     }
 
     static Stream<BitfinexWebSocketAuthOrder> adaptOrders(JsonNode orders) {
-        Iterable<JsonNode> iterator = () -> orders.iterator();
-        return stream(iterator.spliterator(), false)
-                .filter(o -> o.size() >= 32)
+        return stream(orders.spliterator(), false)
+                .filter(order -> order.size() >= 32)
                 .map(BitfinexStreamingAdapters::createOrderObject)
-                .peek(o -> LOG.debug("New order: {}", o));
+                .peek(order -> LOG.debug("New order: {}", order));
     }
 
     @Nullable
@@ -109,8 +105,7 @@ class BitfinexStreamingAdapters {
     }
 
     static Stream<BitfinexWebSocketAuthBalance> adaptBalances(JsonNode balances) {
-        Iterable<JsonNode> iterator = () -> balances.iterator();
-        return stream(iterator.spliterator(), false)
+        return stream(balances.spliterator(), false)
                 .filter(o -> o.size() >= 5)
                 .map(BitfinexStreamingAdapters::createBalanceObject)
                 .peek(o -> LOG.debug("Balance: {}", o));

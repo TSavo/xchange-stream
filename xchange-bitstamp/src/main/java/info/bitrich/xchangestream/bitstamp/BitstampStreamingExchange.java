@@ -4,10 +4,8 @@ import info.bitrich.xchangestream.core.ProductSubscription;
 import info.bitrich.xchangestream.core.StreamingExchange;
 import info.bitrich.xchangestream.core.StreamingMarketDataService;
 import info.bitrich.xchangestream.service.pusher.PusherStreamingService;
-
-import org.knowm.xchange.bitstamp.BitstampExchange;
-
 import io.reactivex.Completable;
+import org.knowm.xchange.bitstamp.BitstampExchange;
 
 import static info.bitrich.xchangestream.service.ConnectableService.BEFORE_CONNECTION_HANDLER;
 

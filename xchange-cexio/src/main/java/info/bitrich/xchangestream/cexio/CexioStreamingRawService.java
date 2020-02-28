@@ -11,11 +11,12 @@ import io.reactivex.CompletableEmitter;
 import io.reactivex.CompletableOnSubscribe;
 import io.reactivex.Observable;
 import io.reactivex.subjects.PublishSubject;
-import java.io.IOException;
 import org.knowm.xchange.currency.CurrencyPair;
 import org.knowm.xchange.dto.Order;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.io.IOException;
 
 public class CexioStreamingRawService extends JsonNettyStreamingService {
 
@@ -69,17 +70,11 @@ public class CexioStreamingRawService extends JsonNettyStreamingService {
   }
 
   private Object GetEventSubscriptionData(String channelName, boolean isSubscribe, Object... args) {
-    switch (channelName) {
-      case ORDERBOOK:
-        {
-          CurrencyPair currencyPair = (CurrencyPair) args[0];
-          return new CexioWebSocketOrderBookSubscriptionData(currencyPair, isSubscribe);
-        }
-      default:
-        {
-          throw new IllegalArgumentException(
-              "Cannot get subscription data for unknown channel name " + channelName);
-        }
+    if(channelName.equals(ORDERBOOK)) {
+      CurrencyPair currencyPair = (CurrencyPair) args[0];
+      return new CexioWebSocketOrderBookSubscriptionData(currencyPair, isSubscribe);
+    }else{
+      throw new IllegalArgumentException("Cannot get subscription data for unknown channel name " + channelName);
     }
   }
 
@@ -131,7 +126,7 @@ public class CexioStreamingRawService extends JsonNettyStreamingService {
     private CompletableEmitter completableEmitter;
 
     @Override
-    public void subscribe(CompletableEmitter e) throws Exception {
+    public void subscribe(CompletableEmitter e) {
       this.completableEmitter = e;
     }
 

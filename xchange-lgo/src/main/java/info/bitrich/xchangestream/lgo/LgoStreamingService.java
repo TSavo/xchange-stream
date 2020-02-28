@@ -11,7 +11,7 @@ import org.knowm.xchange.lgo.service.LgoSignatureService;
 import java.io.IOException;
 import java.time.Duration;
 
-import static info.bitrich.xchangestream.service.netty.StreamingObjectMapperHelper.*;
+import static info.bitrich.xchangestream.service.netty.StreamingObjectMapperHelper.getObjectMapper;
 
 public class LgoStreamingService extends JsonNettyStreamingService {
 

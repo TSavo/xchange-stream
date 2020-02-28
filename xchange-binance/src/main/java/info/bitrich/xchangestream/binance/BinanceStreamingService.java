@@ -1,9 +1,6 @@
 package info.bitrich.xchangestream.binance;
 
-import java.io.IOException;
-
 import com.fasterxml.jackson.databind.JsonNode;
-
 import info.bitrich.xchangestream.core.ProductSubscription;
 import info.bitrich.xchangestream.service.netty.JsonNettyStreamingService;
 
@@ -27,18 +24,18 @@ public class BinanceStreamingService extends JsonNettyStreamingService {
     }
 
     @Override
-    protected String getChannelNameFromMessage(JsonNode message) throws IOException {
+    protected String getChannelNameFromMessage(JsonNode message) {
         return message.get("stream").asText();
     }
 
     @Override
-    public String getSubscribeMessage(String channelName, Object... args) throws IOException {
+    public String getSubscribeMessage(String channelName, Object... args) {
         // No op. Disconnecting from the web socket will cancel subscriptions.
         return null;
     }
 
     @Override
-    public String getUnsubscribeMessage(String channelName) throws IOException {
+    public String getUnsubscribeMessage(String channelName) {
         // No op. Disconnecting from the web socket will cancel subscriptions.
         return null;
     }
